@@ -22,7 +22,7 @@ module.exports = function (env) {
       output: {
         path: paths.distPath,
         filename: "[name].bundle.js",
-        publicPath: "/",
+        publicPath: "/apps/near/",
       },
       devServer: {
         historyApiFallback: {
@@ -88,7 +88,7 @@ module.exports = function (env) {
           template: `${paths.publicPath}/index.html`,
           favicon: `${paths.publicPath}/favicon.png`,
           robots: `${paths.publicPath}/robots.txt`,
-          publicPath: "/",
+          publicPath: "/apps/near/",
         }),
         new webpack.ProgressPlugin(),
         new webpack.ProvidePlugin({
