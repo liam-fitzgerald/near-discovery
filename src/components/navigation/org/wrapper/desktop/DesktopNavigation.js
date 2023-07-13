@@ -3,6 +3,9 @@ import MainNavigationMenu from "./main_navigation_menu/MainNavigationMenu";
 import styled from "styled-components";
 import NearLogotype from "../../icons/near-logotype.svg";
 import LogoBlack from "../../icons/logo-black.svg";
+import UrbitLogotype from "../../icons/urbit-logotype.svg";
+import UrbitLogo from "../../icons/urbit-logo.svg";
+import IconX from "../../icons/x.svg";
 import { Link, useHistory } from "react-router-dom";
 import image from "../../icons/search.svg";
 import { Return } from "../../icons/Return";
@@ -42,6 +45,10 @@ const StyledNavigation = styled.div`
     &.logo-only {
       width: 27px;
       height: 27px;
+    }
+    &.icon-x {
+      width: 15px;
+      height: 15px;
     }
   }
 
@@ -196,6 +203,13 @@ const DesktopNavigation = (props) => {
           <img
             className={props.signedIn ? "logo-only" : ""}
             src={props.signedIn ? LogoBlack : NearLogotype}
+          />
+          &nbsp;
+          <img className="icon-x" src={IconX}/>
+          &nbsp;
+          <img
+            className={props.signedIn ? "logo-only" : ""}
+            src={props.signedIn ? UrbitLogo : UrbitLogotype}
           />
         </Link>
         <div className="form-wrapper">
