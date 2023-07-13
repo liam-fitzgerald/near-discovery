@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LogoBlack from "../icons/logo-black.svg";
 import NearLogotype from "../icons/near-logotype.svg";
+import UrbitLogotype from "../icons/urbit-logotype.svg";
+import UrbitLogo from "../icons/urbit-logo.svg";
+import IconX from "../icons/x.svg";
 import { Widget } from "near-social-vm";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
@@ -28,11 +31,19 @@ const StyledNavigation = styled.div`
     img {
       width: 28px;
       height: 28px;
+      
+      &.icon-x {
+        width: 15px !important;
+        height: 15px !important;
+      }
     }
 
     &.large {
       img {
         width: 110px;
+        &.urbit {
+          width: 85px;
+        }
       }
     }
   }
@@ -132,6 +143,13 @@ export function TopNavigation(props) {
         className={classNames(["logo-link", { large: !props.signedIn }])}
       >
         <img src={props.signedIn ? LogoBlack : NearLogotype} />
+        &nbsp;
+        <img className="icon-x" src={IconX}/>
+        &nbsp;
+        <img
+          className="urbit"
+          src={props.signedIn ? UrbitLogo : UrbitLogotype}
+        />
       </Link>
       <button
         onClick={() => props.onClickShowMenu("left")}
